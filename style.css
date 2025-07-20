@@ -1,0 +1,143 @@
+/* Basic Reset & Body Styling (remains the same) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+}
+
+/* Main Container for Content (remains the same) */
+.container {
+    background-color: #ffffff; /* White background for the content area */
+    padding: 40px 30px;
+    border-radius: 12px; /* Slightly more rounded corners for the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    max-width: 500px; /* Limit width for better readability on large screens */
+    width: 90%; /* Responsive width */
+}
+
+/* Headings & Paragraphs (remain the same) */
+h1 {
+    color: #2c3e50; /* Darker blue-grey for headings */
+    margin-bottom: 10px;
+    font-size: 2.2em; /* Larger heading */
+}
+
+p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* --- MODIFIED: Social Links Section for GRID Layout --- */
+.social-links {
+    display: grid; /* Change to grid display */
+    grid-template-columns: 1fr; /* Default to 1 column on small screens */
+    gap: 15px; /* Space between grid items (buttons) */
+    margin-top: 20px;
+    /* Removed flex-direction: column; from here */
+}
+
+.social-links a {
+    /* These styles remain the same for how individual buttons look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.social-links a i {
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+
+/* Specific Button Styles (Colors - remain the same) */
+.social-links a.linkedin {
+    background-color: #0077B5;
+    color: #ffffff;
+}
+
+.social-links a.linkedin:hover {
+    background-color: #005f91;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a.orcid {
+    background-color: #A6CE39;
+    color: #ffffff;
+}
+
+.social-links a.orcid:hover {
+    background-color: #8BB02D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a.github {
+    background-color: #4078c0;
+    color: #ffffff;
+}
+
+.social-links a.github:hover {
+    background-color: #3664A3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a.scholar {
+    background-color: #4285F4;
+    color: #ffffff;
+}
+
+.social-links a.scholar:hover {
+    background-color: #3367D6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- MODIFIED: Media Queries for Responsive Grid --- */
+@media (min-width: 480px) { /* On screens wider than 480px */
+    .social-links {
+        /* This creates a responsive grid:
+           - It will try to fit as many columns as possible
+           - Each column will be at least 180px wide
+           - Each column will take up an equal fraction (1fr) of the remaining space
+           This is great for 2 or 3 buttons side-by-side if there's enough room.
+        */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* General Media Queries (remain the same) */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .social-links a {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
